@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Innovex Contact</title>
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="dark">
+
+  <!-- PARTICLE BACKGROUND -->
+  <canvas id="particles"></canvas>
+
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- THEME TOGGLE -->
+  <div class="theme-toggle" onclick="toggleTheme()">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <section class="contact-container">
+
+    <!-- LEFT CONTENT -->
+    <div class="left fade-in">
+      <p class="brand">INNOVEX 2.0</p>
+      <h1 class="glow-text">CONTACT US</h1>
+
+      <div class="contact-list">
+
+        <div class="item">
+          <i class="fas fa-phone ringing"></i>
+          <div>
+            <strong>Faculty co-ordinator:</strong><br>
+            REMYA M.V<br>
+            <span><a href="tel:+918281452067" style="color: #f2f4f7; text-decoration: none;">Ph: 8281452067</a></span>
+          </div>
+        </div>
+
+        <div class="item">
+          <i class="fas fa-phone ringing"></i>
+          <div>
+            <strong>Student co-ordinator:</strong><br>
+            AMEEN AHSAN<br>
+            <span><a href="tel:+919633797310" style="color: #f2f4f7; text-decoration: none;">Ph: 9633797310</a></span>
+          </div>
+        </div>
+
+        <div class="item">
+          <i class="fas fa-phone ringing"></i>
+          <div>
+            <strong>Student co-ordinator:</strong><br>
+            ANN MARIA BENNY<br>
+            <span><a href="tel:+918547337372" style="color: #f2f4f7; text-decoration: none;">Ph: 8547337372</a></span>
+          </div>
+        </div>
+
+        <div class="item">
+          <i class="fas fa-envelope mail-glow"></i>
+          <div><a style="color: #f2f4f7;text-decoration: none;" href="mailto:datascienceinnovex@gmail.com" target="_blank">datascienceinnovex@gmail.com</a></div>
+        </div>
+
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="social">
+        <a href="https://www.instagram.com/innovex_2.0?igsh=czVsYzhldjZzcjh0" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="right float">
+      <img src="images/phone.png" class="phone-image" alt="Phone">
+    </div>
+
+  </section>
+
+<script>
+/* THEME TOGGLE */
+function toggleTheme() {
+  document.body.classList.toggle("light");
+  document.body.classList.toggle("dark");
+}
+
+/* PARTICLES */
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+for (let i = 0; i < 70; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2 + 1,
+    dx: Math.random() * 0.8,
+    dy: Math.random() * 0.8
+  });
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "rgba(150,130,255,0.7)";
+
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+    p.x += p.dx;
+    p.y += p.dy;
+
+    if (p.x > canvas.width) p.x = 0;
+    if (p.y > canvas.height) p.y = 0;
+  });
+
+  requestAnimationFrame(animateParticles);
+}
+
+animateParticles();
+</script>
+
+</body>
+</html>
