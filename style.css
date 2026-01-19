@@ -30,7 +30,6 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 15px 20px;
- 
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.1);
   animation: fadeDown 1s ease;
@@ -75,13 +74,13 @@ body {
 }
 
 .nav-links a:hover {
-
+  background: rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 242, 255, 0.3);
 }
 
 .nav-links a::after {
-  display: none; /* Remove underline effect since we have button style */
+  display: none;
 }
 
 /* HERO SECTION */
@@ -164,7 +163,7 @@ button:hover {
 footer {
   text-align: center;
   padding: 20px;
-  
+  background: rgba(0, 0, 0, 0.3);
   border-top: 1px solid rgba(255,255,255,0.1);
   margin-top: auto;
 }
@@ -205,9 +204,112 @@ footer p {
   to { filter: drop-shadow(0 0 35px rgba(0, 242, 255, 0.9)); }
 }
 
-/* ========== MOBILE RESPONSIVE (6-INCH SCREENS) ========== */
+/* ========== TABLET (768px - 1023px) ========== */
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 40px;
+  }
+  
+  #h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0;
+    text-align: left;
+    max-width: 50%;
+  }
+  
+  .nav-links {
+    justify-content: flex-end;
+    width: auto;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    min-width: 110px;
+  }
+  
+  .hero-text h1 {
+    font-size: 5.5rem;
+  }
+  
+  .hero {
+    padding: 60px 40px;
+  }
+}
+
+/* ========== LAPTOP/DESKTOP (1024px and above) ========== */
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 20px 60px;
+  }
+  
+  #h2 {
+    font-size: 1.8rem;
+  }
+  
+  .nav-links a {
+    min-width: 120px;
+    padding: 12px 25px;
+  }
+  
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 0 80px;
+    min-height: calc(100vh - 120px);
+  }
+  
+  .hero-text {
+    max-width: 50%;
+    align-items: flex-start;
+  }
+  
+  .hero-logo {
+    justify-content: flex-start;
+  }
+  
+  .hero-text h1 {
+    font-size: 6rem;
+  }
+  
+  .hero-text p {
+    font-size: 1.5rem;
+  }
+  
+  /* Show hero image on desktop only */
+  .hero-image {
+    display: block;
+    max-width: 45%;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    max-width: 360px;
+    filter: drop-shadow(0 0 40px rgba(139,92,246,0.6));
+    animation: float 4s infinite ease-in-out;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+  }
+}
+
+/* ========== EXTRA LARGE SCREENS ========== */
+@media (min-width: 1440px) {
+  .hero-text h1 {
+    font-size: 7rem;
+  }
+  
+  .hero-logo img {
+    width: 100px;
+  }
+}
+
+/* ========== MOBILE RESPONSIVE (767px and below) ========== */
 @media (max-width: 767px) {
-  /* FIX BODY FOR MOBILE */
   html, body {
     width: 100%;
     height: 100%;
@@ -215,13 +317,12 @@ footer p {
     -webkit-text-size-adjust: 100%;
   }
   
-  /* NAVBAR - KEEP AT TOP BUT ADJUST */
+  /* NAVBAR - MOBILE OPTIMIZED */
   .navbar {
     padding: 10px 15px !important;
     flex-direction: column !important;
   }
   
-  /* DEPARTMENT TITLE - ADJUST FOR MOBILE */
   #h2 {
     font-size: 1.2rem !important;
     text-align: center !important;
@@ -232,7 +333,6 @@ footer p {
     padding: 0 10px;
   }
   
-  /* NAV LINKS - CENTERED BUTTONS */
   .nav-links {
     justify-content: center !important;
     gap: 10px !important;
@@ -254,7 +354,6 @@ footer p {
     justify-content: center !important;
   }
   
-  /* HERO TEXT - BIGGER ON MOBILE */
   .hero-text {
     width: 100%;
     max-width: 100%;
@@ -286,7 +385,7 @@ footer p {
     line-height: 1.4;
   }
   
-  /* BUTTON - BIGGER ON MOBILE */
+  /* BUTTON - MOBILE OPTIMIZED */
   button {
     padding: 16px 35px !important;
     font-size: 1.1rem !important;
@@ -295,7 +394,7 @@ footer p {
     min-width: 200px;
   }
   
-  /* FOOTER - ADJUST */
+  /* FOOTER - MOBILE OPTIMIZED */
   footer {
     padding: 15px !important;
     position: relative;
@@ -315,38 +414,34 @@ footer p {
 }
 
 /* ========== VERY SMALL PHONES (iPhone SE etc) ========== */
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   #h2 {
-    font-size: 1rem !important;
-    padding: 0 5px;
+    font-size: 13px !important;
+    letter-spacing: 0.5px;
   }
   
   .hero-text h1 {
-    font-size: 3rem !important;
+    font-size: 45px !important;
   }
   
-  .hero-text p {
-    font-size: 1.1rem !important;
+  .hero-logo img {
+    width: 60px !important;
   }
   
   .nav-links {
-    gap: 8px !important;
+    gap: 10px !important;
   }
   
   .nav-links a {
-    min-width: 90px !important;
-    padding: 8px 12px !important;
-    font-size: 0.85rem !important;
+    padding: 8px 15px !important;
+    min-width: 85px !important;
+    font-size: 0.9rem !important;
   }
   
   button {
     padding: 14px 30px !important;
     font-size: 1rem !important;
     min-width: 180px;
-  }
-  
-  .hero-logo img {
-    width: 60px !important;
   }
 }
 
@@ -412,26 +507,5 @@ footer p {
   button {
     padding: 12px 25px !important;
     font-size: 0.9rem !important;
-  }
-}
-
-/* ========== TABLET (768px - 1023px) ========== */
-@media (min-width: 768px) and (max-width: 1023px) {
-  /* Keep laptop view but adjust slightly */
-  .hero-text h1 {
-    font-size: 5rem !important;
-  }
-  
-  .hero-text p {
-    font-size: 1.4rem !important;
-  }
-  
-  .nav-links a {
-    min-width: 100px !important;
-    padding: 12px 20px !important;
-  }
-  
-  #h2 {
-    font-size: 1.5rem !important;
   }
 }
