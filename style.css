@@ -205,132 +205,233 @@ footer p {
   to { filter: drop-shadow(0 0 35px rgba(0, 242, 255, 0.9)); }
 }
 
-/* Medium screens (tablets) */
-@media (min-width: 768px) {
+/* ========== MOBILE RESPONSIVE (6-INCH SCREENS) ========== */
+@media (max-width: 767px) {
+  /* FIX BODY FOR MOBILE */
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  /* NAVBAR - KEEP AT TOP BUT ADJUST */
   .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px 40px;
+    padding: 10px 15px !important;
+    flex-direction: column !important;
   }
   
+  /* DEPARTMENT TITLE - ADJUST FOR MOBILE */
   #h2 {
-    font-size: 1.6rem;
-    margin-bottom: 0;
-    text-align: left;
-    max-width: 50%;
+    font-size: 1.2rem !important;
+    text-align: center !important;
+    margin-bottom: 10px !important;
+    white-space: normal !important;
+    line-height: 1.3;
+    max-width: 100%;
+    padding: 0 10px;
   }
   
+  /* NAV LINKS - CENTERED BUTTONS */
   .nav-links {
-    justify-content: flex-end;
-    width: auto;
-    gap: 20px;
+    justify-content: center !important;
+    gap: 10px !important;
+    flex-wrap: wrap;
+    width: 100% !important;
   }
   
   .nav-links a {
-    min-width: 110px;
+    min-width: 100px !important;
+    padding: 10px 15px !important;
+    font-size: 0.9rem !important;
+    text-align: center;
+  }
+  
+  /* HERO SECTION - MOBILE OPTIMIZED */
+  .hero {
+    min-height: calc(100vh - 150px) !important;
+    padding: 20px 15px !important;
+    justify-content: center !important;
+  }
+  
+  /* HERO TEXT - BIGGER ON MOBILE */
+  .hero-text {
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
   }
   
   .hero-text h1 {
-    font-size: 5.5rem;
-  }
-  
-  .hero {
-    padding: 60px 40px;
-  }
-}
-
-/* Large screens (desktops) */
-@media (min-width: 1024px) {
-  .navbar {
-    padding: 20px 60px;
-  }
-  
-  #h2 {
-    font-size: 1.8rem;
-  }
-  
-  .nav-links a {
-    min-width: 120px;
-    padding: 12px 25px;
-  }
-  
-  .hero {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-    padding: 0 80px;
-    min-height: calc(100vh - 120px);
-  }
-  
-  .hero-text {
-    max-width: 50%;
-    align-items: flex-start;
+    font-size: 3.5rem !important;
+    text-align: center;
+    margin-bottom: 15px !important;
+    line-height: 1.1;
   }
   
   .hero-logo {
-    justify-content: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
   }
   
-  .hero-text h1 {
-    font-size: 6rem;
+  .hero-logo img {
+    width: 70px !important;
   }
   
   .hero-text p {
-    font-size: 1.5rem;
+    font-size: 1.2rem !important;
+    text-align: center;
+    margin: 15px 0 25px !important;
+    padding: 0 10px;
+    line-height: 1.4;
   }
   
-  /* Show hero image on desktop only */
-  .hero-image {
-    display: block;
-    max-width: 45%;
+  /* BUTTON - BIGGER ON MOBILE */
+  button {
+    padding: 16px 35px !important;
+    font-size: 1.1rem !important;
+    margin-top: 15px !important;
+    width: auto;
+    min-width: 200px;
   }
   
-  .hero-image img {
+  /* FOOTER - ADJUST */
+  footer {
+    padding: 15px !important;
+    position: relative;
+    bottom: 0;
     width: 100%;
-    max-width: 360px;
-    filter: drop-shadow(0 0 40px rgba(139,92,246,0.6));
-    animation: float 4s infinite ease-in-out;
   }
   
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-18px); }
+  footer p {
+    font-size: 0.85rem !important;
+    line-height: 1.4;
+  }
+  
+  /* HIDE HERO IMAGE ON MOBILE */
+  .hero-image {
+    display: none !important;
   }
 }
 
-/* Extra large screens */
-@media (min-width: 1440px) {
-  .hero-text h1 {
-    font-size: 7rem;
-  }
-  
-  .hero-logo img {
-    width: 100px;
-  }
-}
-
-/* Small screens - adjust department title */
-@media (max-width: 480px) {
+/* ========== VERY SMALL PHONES (iPhone SE etc) ========== */
+@media (max-width: 375px) {
   #h2 {
-    font-size: 13px;
-    letter-spacing: 0.5px;
+    font-size: 1rem !important;
+    padding: 0 5px;
   }
   
   .hero-text h1 {
-    font-size:45px;
+    font-size: 3rem !important;
   }
   
-  .hero-logo img {
-    width: 60px;
+  .hero-text p {
+    font-size: 1.1rem !important;
   }
   
   .nav-links {
-    gap: 10px;
+    gap: 8px !important;
   }
   
   .nav-links a {
-    padding: 8px 15px;
-    min-width: 85px;
-    font-size: 0.9rem;
+    min-width: 90px !important;
+    padding: 8px 12px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  button {
+    padding: 14px 30px !important;
+    font-size: 1rem !important;
+    min-width: 180px;
+  }
+  
+  .hero-logo img {
+    width: 60px !important;
+  }
+}
+
+/* ========== HEIGHT CONSTRAINTS ========== */
+@media (max-height: 700px) and (max-width: 767px) {
+  .hero {
+    min-height: calc(100vh - 140px) !important;
+    padding-top: 10px !important;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .hero-text p {
+    font-size: 1.1rem !important;
+    margin: 10px 0 20px !important;
+  }
+  
+  .navbar {
+    padding: 8px 15px !important;
+  }
+  
+  #h2 {
+    margin-bottom: 8px !important;
+  }
+}
+
+/* ========== LANDSCAPE MODE ========== */
+@media (orientation: landscape) and (max-height: 600px) and (max-width: 767px) {
+  .hero {
+    flex-direction: row !important;
+    padding: 60px 20px 20px !important;
+    gap: 20px;
+  }
+  
+  .hero-text {
+    max-width: 60% !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.6rem !important;
+    text-align: left !important;
+  }
+  
+  .hero-text p {
+    font-size: 1rem !important;
+    text-align: left !important;
+  }
+  
+  .hero-logo {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  
+  .nav-links {
+    justify-content: center !important;
+  }
+  
+  button {
+    padding: 12px 25px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* ========== TABLET (768px - 1023px) ========== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Keep laptop view but adjust slightly */
+  .hero-text h1 {
+    font-size: 5rem !important;
+  }
+  
+  .hero-text p {
+    font-size: 1.4rem !important;
+  }
+  
+  .nav-links a {
+    min-width: 100px !important;
+    padding: 12px 20px !important;
+  }
+  
+  #h2 {
+    font-size: 1.5rem !important;
   }
 }
