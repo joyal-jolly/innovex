@@ -221,38 +221,291 @@ body.light {
   to { opacity: 1; transform: translateX(0); }
 }
 
-/* MOBILE (6-INCH) */
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 25px 20px;
+/* ========== MOBILE RESPONSIVE (6-INCH SCREENS) ========== */
+@media (max-width: 767px) {
+  /* FIX BODY FOR MOBILE */
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-text-size-adjust: 100%;
   }
-
-  .item {
-    justify-content: center;
-  }
-
-  .social {
-    justify-content: center;
-  }
+  
+  /* NAVBAR - CENTERED AT TOP */
   .nav-links {
-        top: 15px;
-        right: 15px;
-        padding: 8px 15px;
-        gap: 10px;
-      }
-      
-      .nav-links a {
-        padding: 5px 8px;
-        font-size: 0.9rem;
-      }
-      .contact-container{
-        margin-top: 40px;
-      }
-      .nav-links{
-        margin-right: 30px;
-      }
-      
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) !important;
+    right: auto !important;
+    width: auto !important;
+    display: flex !important;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 12px 25px !important;
+    border-radius: 50px;
+    z-index: 100;
+    gap: 20px !important;
+    animation: fadeIn 1s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .nav-links a {
+    font-size: 16px !important;
+    font-weight: 600;
+    padding: 8px 12px;
+    color: #ffffff;
+  }
+  
+  /* THEME TOGGLE POSITION */
+  .theme-toggle {
+    top: 20px !important;
+    right: 20px !important;
+    padding: 12px !important;
+    font-size: 18px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* MAIN CONTAINER - COLUMN LAYOUT */
+  .contact-container {
+    flex-direction: column !important;
+    padding: 100px 20px 20px !important;
+    gap: 30px !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+  }
+  
+  /* LEFT CONTENT - BIGGER TEXT */
+  .left {
+    max-width: 100% !important;
+    text-align: center !important;
+    order: 1;
+    margin-top: 20px;
+  }
+  
+  .brand {
+    font-size: 16px !important;
+    letter-spacing: 3px !important;
+    margin-bottom: 10px;
+  }
+  
+  .glow-text {
+    font-size: 42px !important;
+    margin: 15px 0 30px !important;
+    line-height: 1.2;
+  }
+  
+  /* CONTACT ITEMS - BIGGER */
+  .contact-list {
+    gap: 25px !important;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .item {
+    flex-direction: row !important;
+    gap: 20px !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px !important;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    align-items: center;
+  }
+  
+  .item i {
+    font-size: 24px !important;
+    min-width: 30px;
+    text-align: center;
+  }
+  
+  .item strong {
+    font-size: 17px !important;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* SOCIAL - BIGGER */
+  .social {
+    margin-top: 30px !important;
+    justify-content: center;
+    gap: 25px;
+  }
+  
+  .social a {
+    font-size: 28px !important;
+    padding: 10px;
+  }
+  
+  /* PHONE IMAGE - MOVED TO BOTTOM */
+  .right {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto !important;
+    margin-bottom: 20px;
+  }
+  
+  .phone-image {
+    width: 150px !important;
+    max-width: 80%;
+    margin-top: 0 !important;
+  }
+  
+  /* FIX LIGHT THEME */
+  body.light .nav-links {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  body.light .nav-links a {
+    color: #333;
+  }
+  
+  body.light .item {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  body.light .item a {
+    color: #333;
+  }
+}
 
+/* ========== EXTRA SMALL PHONES ========== */
+@media (max-width: 360px) {
+  .nav-links {
+    top: 15px;
+    padding: 10px 20px !important;
+    gap: 15px !important;
+  }
+  
+  .nav-links a {
+    font-size: 14px !important;
+    padding: 6px 8px;
+  }
+  
+  .theme-toggle {
+    top: 15px !important;
+    right: 15px !important;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .contact-container {
+    padding: 90px 15px 15px !important;
+  }
+  
+  .glow-text {
+    font-size: 36px !important;
+  }
+  
+  .brand {
+    font-size: 14px !important;
+  }
+  
+  .item {
+    padding: 18px !important;
+    font-size: 15px !important;
+    gap: 15px !important;
+  }
+  
+  .item i {
+    font-size: 22px !important;
+  }
+  
+  .social a {
+    font-size: 26px !important;
+  }
+  
+  .phone-image {
+    width: 130px !important;
+  }
+}
+
+/* ========== HEIGHT CONSTRAINTS ========== */
+@media (max-height: 700px) and (max-width: 767px) {
+  .contact-container {
+    padding-top: 80px !important;
+    gap: 20px !important;
+  }
+  
+  .glow-text {
+    font-size: 32px !important;
+    margin: 10px 0 20px !important;
+  }
+  
+  .contact-list {
+    gap: 15px !important;
+  }
+  
+  .item {
+    padding: 15px !important;
+  }
+  
+  .phone-image {
+    width: 120px !important;
+  }
+  
+  .nav-links {
+    top: 10px !important;
+  }
+  
+  .theme-toggle {
+    top: 10px !important;
+  }
+}
+
+/* ========== LANDSCAPE MODE ========== */
+@media (orientation: landscape) and (max-height: 600px) and (max-width: 767px) {
+  .contact-container {
+    flex-direction: row !important;
+    padding: 70px 20px 20px !important;
+    gap: 20px !important;
+    align-items: center;
+  }
+  
+  .left {
+    max-width: 60% !important;
+    text-align: left !important;
+  }
+  
+  .right {
+    max-width: 40% !important;
+    margin-top: 0 !important;
+  }
+  
+  .phone-image {
+    width: 120px !important;
+  }
+  
+  .nav-links {
+    top: 10px !important;
+    padding: 8px 20px !important;
+  }
+  
+  .glow-text {
+    font-size: 28px !important;
+    margin: 10px 0 15px !important;
+  }
+  
+  .contact-list {
+    gap: 12px !important;
+  }
+  
+  .item {
+    padding: 12px !important;
+    font-size: 14px !important;
+  }
 }
