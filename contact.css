@@ -339,11 +339,14 @@ body.light {
     margin-top: 30px !important;
     justify-content: center;
     gap: 25px;
+    position: relative;
   }
   
   .social a {
     font-size: 28px !important;
     padding: 10px;
+     position: relative;
+    top:-40px;
   }
   
   /* PHONE IMAGE - MOVED TO BOTTOM */
@@ -509,3 +512,4 @@ body.light {
     font-size: 14px !important;
   }
 }
+
